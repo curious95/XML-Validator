@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/test"
+	xmlns:tns="http://www.example.org/test" elementFormDefault="qualified">
+
+	<xs:element name="Delivery_Orders" type="tns:OrdersType" />
+
+	<xs:complexType name="OrdersType">
+		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element name="Customer" type="tns:CustomerType"
+				maxOccurs="1" minOccurs="1" />
+            <xs:element name="Depot" maxOccurs="1" minOccurs="1" type="tns:county_Depot">
+			</xs:element>
+            <xs:element name="Order" type="tns:OrderType"
+				maxOccurs="unbounded" minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustomerType">
+		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element name="FirstName" maxOccurs="1" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(.*[a-z A-Z]){2}" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Surname" maxOccurs="1" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(.*[a-z A-Z]){2}" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Address_Line_1" maxOccurs="1"
+				minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(.*[a-z A-Z]){4}" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Address_Line_2" maxOccurs="1"
+				minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(.*[a-z A-Z]){4}" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Address_Line_3" type="xs:string"
+				maxOccurs="1" minOccurs="0" />
+			<xs:element name="County" maxOccurs="1" minOccurs="1"
+				type="tns:county_Depot">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="OrderType">
+		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element name="Items" type="tns:ItemsType"
+				maxOccurs="unbounded" minOccurs="1" />
+			<xs:element name="Days" maxOccurs="5" minOccurs="1"
+				type="tns:DaysType" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="ItemsType">
+		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element name="Item" maxOccurs="unbounded"
+				minOccurs="1" type="tns:ItemType" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="ItemType">
+		<xs:sequence>
+			<xs:element name="Quantity" maxOccurs="1" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ItemName" maxOccurs="1" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration
+							value="Regular Milk - 1 litre carton" />
+						<xs:enumeration
+							value="Low Fat Milk - 1 litre carton" />
+						<xs:enumeration
+							value="Strawberry Yoghurt - 100ml pot" />
+						<xs:enumeration
+							value="Raspberry Yoghurt - 100ml pot" />
+						<xs:enumeration value="Cream - 125ml carton" />
+						<xs:enumeration value="Cream - 250ml carton" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="DaysType">
+		<xs:sequence maxOccurs="5" minOccurs="1">
+			<xs:element name="Monday" maxOccurs="1" minOccurs="1"
+				type="xs:boolean" />
+			<xs:element name="Tuesday" maxOccurs="1" minOccurs="1"
+				type="xs:boolean" />
+			<xs:element name="Wednesday" maxOccurs="1" minOccurs="1"
+				type="xs:boolean" />
+			<xs:element name="Thursday" maxOccurs="1" minOccurs="1"
+				type="xs:boolean" />
+			<xs:element name="Friday" maxOccurs="1" minOccurs="1"
+				type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="county_Depot">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Dublin"></xs:enumeration>
+			<xs:enumeration value="Cork"></xs:enumeration>
+			<xs:enumeration value="Kildare"></xs:enumeration>
+			<xs:enumeration value="Limerick"></xs:enumeration>
+			<xs:enumeration value="Waterford"></xs:enumeration>
+			<xs:enumeration value="Wicklow"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Delivery_Orders xmlns:tns="http://www.example.org/test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/test kamal_pradhan_assingment1.xsd ">
+  <tns:Customer>
+    <tns:FirstName>Kamal</tns:FirstName>
+    <tns:Surname>Pradhan</tns:Surname>
+    <tns:Address_Line_1>11 Beechwood Lawn</tns:Address_Line_1>
+    <tns:Address_Line_2>Glenageary</tns:Address_Line_2>
+    <tns:Address_Line_3></tns:Address_Line_3>
+    <tns:County>Dublin</tns:County>
+  </tns:Customer>
+  <tns:Depot>Dublin</tns:Depot>
+  <tns:Order>
+    <tns:Items>
+      <tns:Item>
+        <tns:Quantity>1</tns:Quantity>
+        <tns:ItemName>Regular Milk - 1 litre carton</tns:ItemName>
+      </tns:Item>
+    </tns:Items>
+    <tns:Days>
+      <tns:Monday>true</tns:Monday>
+      <tns:Tuesday>true</tns:Tuesday>
+      <tns:Wednesday>true</tns:Wednesday>
+      <tns:Thursday>false</tns:Thursday>
+      <tns:Friday>false</tns:Friday>
+    </tns:Days>
+  </tns:Order>
+  <tns:Order>
+    <tns:Items>
+      <tns:Item>
+        <tns:Quantity>3</tns:Quantity>
+        <tns:ItemName>Strawberry Yoghurt - 100ml pot</tns:ItemName>
+      </tns:Item>
+      <tns:Item>
+        <tns:Quantity>2</tns:Quantity>
+        <tns:ItemName>Raspberry Yoghurt - 100ml pot</tns:ItemName>
+      </tns:Item>
+    </tns:Items>
+    <tns:Days>
+      <tns:Monday>true</tns:Monday>
+      <tns:Tuesday>true</tns:Tuesday>
+      <tns:Wednesday>true</tns:Wednesday>
+      <tns:Thursday>true</tns:Thursday>
+      <tns:Friday>true</tns:Friday>
+    </tns:Days>
+  </tns:Order>
+  <tns:Order>
+    <tns:Items>
+      <tns:Item>
+        <tns:Quantity>2</tns:Quantity>
+        <tns:ItemName>Cream - 125ml carton</tns:ItemName>
+      </tns:Item>
+      <tns:Item>
+        <tns:Quantity>2</tns:Quantity>
+        <tns:ItemName>Cream - 250ml carton</tns:ItemName>
+      </tns:Item>
+    </tns:Items>
+    <tns:Days>
+      <tns:Monday>false</tns:Monday>
+      <tns:Tuesday>false</tns:Tuesday>
+      <tns:Wednesday>false</tns:Wednesday>
+      <tns:Thursday>true</tns:Thursday>
+      <tns:Friday>true</tns:Friday>
+    </tns:Days>
+  </tns:Order>
+</tns:Delivery_Orders>
